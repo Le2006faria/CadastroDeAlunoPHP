@@ -9,7 +9,7 @@
 
 <body>
 
-<form action="validacao.php" method="post">
+<form action="../controller/validalogin.php" method="post">
 <fieldset>
 <legend>Dados de Login</legend>
 	<label for="txUsuario">Usuário</label>

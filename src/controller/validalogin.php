@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-if (!empty($_POST) && (empty($_POST['txt_email']) || empty($_POST['txt_senha']))) {
-    header("Location: login.php");
+if (!empty($_POST) && (empty($_POST['usuario']) || empty($_POST['senha']))) {
+    header("Location: ../view/login.php");
     exit;
 }
 
@@ -12,8 +12,8 @@ if (!$con) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$usuario = mysqli_real_escape_string($con, $_POST['txt_email']);
-$senha = mysqli_real_escape_string($con, $_POST['txt_senha']);
+$usuario = mysqli_real_escape_string($con, $_POST['usuario']);
+$senha = mysqli_real_escape_string($con, $_POST['senha']);
 
 $sql = "SELECT `id`, `nome`, `nivel` FROM `usuarios` WHERE `usuario` = ? AND `senha` = ? AND `ativo` = 1 LIMIT 1";
 $stmt = mysqli_prepare($con, $sql);
