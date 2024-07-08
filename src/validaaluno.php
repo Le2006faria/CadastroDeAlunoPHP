@@ -18,7 +18,7 @@
 <body>
 
 <!-- Link para a página de login -->
-<a href="validalogin.php">Login</a>
+<a href="login.php">Login</a>
 
 <DIV align="left">
 <?php

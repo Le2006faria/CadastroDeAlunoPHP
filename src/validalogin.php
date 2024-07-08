@@ -2,15 +2,11 @@
 session_start();
 
 if (!empty($_POST) && (empty($_POST['usuario']) || empty($_POST['senha']))) {
-    header("Location: ../view/login.php");
+    header("Location: login.php");
     exit;
 }
 
-$con = mysqli_connect("localhost", "root", "admin", "cadastrodealunos");
-
-if (!$con) {
-    die("Connection failed: " . mysqli_connect_error());
-}
+$con = mysqli_connect('localhost', 'root', 'admin', 'cadastro_alunos') or die(mysqli_connect_error());
 
 $usuario = mysqli_real_escape_string($con, $_POST['usuario']);
 $senha = mysqli_real_escape_string($con, $_POST['senha']);
